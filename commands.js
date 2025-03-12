@@ -32,6 +32,18 @@ const commands = [
       },
     ],
   },
+  {
+    name: "leetcodestats",
+    description: "Get stats of LeetCode user",
+    options: [
+      {
+        name: "username",
+        description: "Enter the LeetCode username",
+        type: 3, // Type 3 means STRING
+        required: true,
+      },
+    ],
+  },
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
