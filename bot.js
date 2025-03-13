@@ -9,6 +9,7 @@ const { callGfgStats } = require("./commands/gfgstats");
 const { callLeetcodeStats } = require("./commands/leetcodestats");
 const { callDsaQuiz } = require("./commands/dsaquiz");
 const { callMemeGenerator } = require("./commands/meme");
+const { callTopicExplainer } = require("./commands/explain");
 
 const TOKEN = process.env.TOKEN;
 
@@ -33,8 +34,10 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await callLeetcodeStats(interaction);
   } else if (interaction.commandName === "dsaquiz") {
     await callDsaQuiz(interaction);
-  } else if (interaction.commandName === 'dsameme'){
+  } else if (interaction.commandName === "dsameme") {
     await callMemeGenerator(interaction);
+  } else if (interaction.commandName === "explain") {
+    await callTopicExplainer(interaction);
   }
 });
 

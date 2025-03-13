@@ -53,6 +53,18 @@ const commands = [
     name: "dsameme",
     description: "A random DSA meme",
   },
+  {
+    name: "explain",
+    description: "Explains a DSA topic",
+    options: [
+      {
+        name: "topic",
+        description: "Enter the GeeksForGeeks username",
+        type: 3, // Type 3 means STRING
+        required: true,
+      },
+    ],
+  },
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);

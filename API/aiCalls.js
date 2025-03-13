@@ -97,4 +97,12 @@ const memeAPI = async () => {
   return response;
 };
 
-module.exports = { explainTopic, dsaChallenge, dsaQuiz, memeAPI };
+const topicExplainAPI = async (topic) => {
+  const prompt = `context - you are a dsa topic explainer who makes any topic easy by your funny teaching style and examples dont reveal about yourself, Prompt - explain ${topic} in as short as possible and simple use emojies as well, dont answer topics which are not related to dsa`;
+
+  const result = await model.generateContent(prompt);
+  const response = result.response.text();
+  return response;
+};
+
+module.exports = { explainTopic, dsaChallenge, dsaQuiz, memeAPI, topicExplainAPI };
