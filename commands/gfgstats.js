@@ -1,24 +1,21 @@
-const {gfgUserDetails} = require('../API/gfgAPI')
+const { gfgUserDetails } = require("../API/gfgAPI");
 
 async function callGfgStats(interaction) {
-    
-    const username = interaction.options.getString("username");
-    await interaction.deferReply();
+  const username = interaction.options.getString("username");
+  await interaction.deferReply();
 
-    try {
-      const details = await gfgUserDetails(username);
+  try {
+    const details = await gfgUserDetails(username);
 
-      // Check if the user exists (handle missing or incorrect usernames)
-      if (!details || !details.info || !details.info.userName) {
-        return await interaction.followUp(
-          `❌ **User ${username} not found on GeeksForGeeks! Make sure username is correct** 🤔`
-        );
-      }
+    // Check if the user exists (handle missing or incorrect usernames)
+    if (!details || !details.info || !details.info.userName) {
+      return await interaction.followUp(
+        `❌ **User ${username} not found on GeeksForGeeks! Make sure username is correct** 🤔`
+      );
+    }
 
-      await interaction.followUp({
-        content: `🎯 **GeeksForGeeks Stats for _${
-          details.info?.userName
-        }_** 🚀\n
+    await interaction.followUp({
+      content: `🎯 **GeeksForGeeks Stats for _${details.info?.userName}_** 🚀\n
     👤 **Name:** *${details.info?.fullName || "Not Available"}*
     🏫 **Institute:** *${details.info?.institute || "Not Available"}*
     🏅 **Institute Rank:** \`${details.info?.instituteRank ?? "N/A"}\`
@@ -44,13 +41,13 @@ async function callGfgStats(interaction) {
     ━━━━━━━━━━━━━━━━━━━━━━━━
     💡 Keep grinding and leveling up your coding skills! 🚀
     `,
-        ephemeral: false,
-      });
-    } catch (error) {
-      await interaction.followUp(
-        `❌ **Failed to fetch stats for _${username}_.** Please try again later.`
-      );
-    }
+      ephemeral: false,
+    });
+  } catch (error) {
+    await interaction.followUp(
+      `❌ **Failed to fetch stats for _${username}_.** Please try again later.`
+    );
+  }
 }
 
-module.exports = {callGfgStats}
+module.exports = { callGfgStats };

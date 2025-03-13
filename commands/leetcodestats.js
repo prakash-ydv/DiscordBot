@@ -65,5 +65,4 @@ async function callLeetcodeStats(interaction) {
   }
 }
 
-
-module.exports = {callLeetcodeStats}
+module.exports = { callLeetcodeStats };

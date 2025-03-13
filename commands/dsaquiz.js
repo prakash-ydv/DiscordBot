@@ -4,7 +4,6 @@ async function callDsaQuiz(interaction) {
   await interaction.deferReply();
   try {
     const quiz = await dsaQuiz();
-    console.log("Raw AI Response:", quiz);
 
     const cleanedQuiz = quiz.replace(/```json\n|\n```/g, "");
     let parsedQuiz;
@@ -103,4 +102,4 @@ async function callDsaQuiz(interaction) {
   }
 }
 
-module.exports = {callDsaQuiz}
+module.exports = { callDsaQuiz };

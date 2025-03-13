@@ -1,4 +1,4 @@
-const {dsaChallenge} = require('../API/aiCalls')
+const { dsaChallenge } = require("../API/aiCalls");
 
 async function callChallengeCommand(interaction) {
   const level = interaction.options.getString("level");
@@ -14,4 +14,4 @@ async function callChallengeCommand(interaction) {
   }
 }
 
-module.exports = {callChallengeCommand};
+module.exports = { callChallengeCommand };
