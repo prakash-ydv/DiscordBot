@@ -29,4 +29,65 @@ const dsaChallenge = async (level) => {
   return response;
 };
 
-module.exports = { explainTopic, dsaChallenge };
+const dsaQuiz = async (level) => {
+  const prompt = `Generate a multiple-choice DSA quiz question with four options. except LIFO, include any random topic (Basic Topics:
+Arrays
+Strings
+Linked Lists
+Stacks
+Queues
+Hashing
+Recursion
+Sorting Algorithms
+Searching Algorithms
+Intermediate Topics:
+Binary Search
+Two Pointers Technique
+Sliding Window Technique
+Bit Manipulation
+Greedy Algorithms
+Divide and Conquer
+Backtracking
+Dynamic Programming (DP Basics)
+Graph Traversal (DFS & BFS)
+Tree Traversal (Preorder, Inorder, Postorder)
+Advanced Topics:
+Graph Algorithms (Dijkstra, Floyd-Warshall, Bellman-Ford)
+Topological Sorting
+Spanning Trees (Prim’s & Kruskal’s Algorithm)
+Disjoint Set (Union-Find)
+Trie (Prefix Tree)
+Segment Tree
+Fenwick Tree (Binary Indexed Tree - BIT)
+KMP Algorithm (Pattern Matching)
+Rabin-Karp Algorithm (Pattern Matching)
+String Hashing (Rolling Hash, Z-Algorithm)
+Competitive Programming Topics:
+Mo’s Algorithm
+Heavy-Light Decomposition
+Sqrt Decomposition
+Centroid Decomposition
+Game Theory
+Matrix Exponentiation
+Persistent Data Structures
+Suffix Array & LCP
+Number Theory (GCD, LCM, Modular Arithmetic)
+Fast Exponentiation
+Combinatorics (nCr, Permutations, Catalan Number))be unpridictiable and Ensure the question is clear and precise. The correct answer should be included explicitly cover all topics of DSA.
+  
+  return strictly a json like following
+
+{
+  "question": "Which sorting algorithm has the best average-case time complexity?",
+  "options": ["Bubble Sort", "Merge Sort", "Quick Sort", "Selection Sort"],
+  "correctAnswer": "Merge Sort"
+}
+
+    `;
+
+  const result = await model.generateContent(prompt);
+  const response = result.response.text();
+  return response;
+};
+
+module.exports = { explainTopic, dsaChallenge, dsaQuiz };
