@@ -90,4 +90,11 @@ Combinatorics (nCr, Permutations, Catalan Number))be unpridictiable and Ensure t
   return response;
 };
 
-module.exports = { explainTopic, dsaChallenge, dsaQuiz };
+const memeAPI = async () => {
+  const prompt = `Generate a short and funny joke or meme related to Data Structures and Algorithms (DSA). Keep it simple and easy to understand. Add emojis to make it more humorous. The joke should be programmer-friendly and relevant to DSA topics like recursion, sorting, stacks, queues, linked lists, graphs, or dynamic programming. Keep it under 2 sentences and dont use tags.`;
+  const result = await model.generateContent(prompt);
+  const response = result.response.text();
+  return response;
+};
+
+module.exports = { explainTopic, dsaChallenge, dsaQuiz, memeAPI };

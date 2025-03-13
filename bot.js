@@ -8,6 +8,7 @@ const { callChallengeCommand } = require("./commands/challenge");
 const { callGfgStats } = require("./commands/gfgstats");
 const { callLeetcodeStats } = require("./commands/leetcodestats");
 const { callDsaQuiz } = require("./commands/dsaquiz");
+const { callMemeGenerator } = require("./commands/meme");
 
 const TOKEN = process.env.TOKEN;
 
@@ -32,6 +33,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await callLeetcodeStats(interaction);
   } else if (interaction.commandName === "dsaquiz") {
     await callDsaQuiz(interaction);
+  } else if (interaction.commandName === 'dsameme'){
+    await callMemeGenerator(interaction);
   }
 });
 

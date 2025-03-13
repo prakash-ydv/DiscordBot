@@ -49,6 +49,10 @@ const commands = [
     name: "dsaquiz",
     description: "A random DSA quiz",
   },
+  {
+    name: "dsameme",
+    description: "A random DSA meme",
+  },
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
