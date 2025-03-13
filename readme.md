@@ -34,6 +34,14 @@ User Stats of GFG/LeetCode
 Quic Quiz
 ![stats](./screenshots/quiz.png)
 
+---
+
+## Add Bot to your Discord Server 👍
+
+```
+https://discord.com/oauth2/authorize?client_id=1349287918622998560&permissions=2147485696&integration_type=0&scope=bot
+```
+
 ## **🛠 Setup & Installation**  
 
 ### **1️⃣ Clone the Repository**  
