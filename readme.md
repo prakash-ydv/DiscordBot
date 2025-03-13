@@ -20,6 +20,20 @@ A powerful Discord bot that provides **DSA challenges, quizzes, memes, topic exp
 
 ---
 
+## 📷 Screenshots
+
+DSA Challenge [easy, medium, hard]
+![challenge](./screenshots/challenge.png)
+
+AI Explains DSA related Question
+![explain](./screenshots/explain.png)
+
+User Stats of GFG/LeetCode
+![stats](./screenshots/stats.png)
+
+Quic Quiz
+![stats](./screenshots/quiz.png)
+
 ## **🛠 Setup & Installation**  
 
 ### **1️⃣ Clone the Repository**  
